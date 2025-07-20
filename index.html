@@ -32,10 +32,11 @@
       box-sizing: border-box;
     }
 
+    /* Светлая тема по умолчанию */
     body {
       font-family: Arial, sans-serif;
       color: white;
-      background-color: black; /* Установка чёрного фона */
+      background-color: white;
       background: url('images/Earth.gif') no-repeat center center fixed;
       background-size: cover;
       display: flex;
@@ -44,8 +45,32 @@
       align-items: center;
       min-height: 100vh;
       overflow: auto;
-      padding-bottom: 0;
-      position: relative;
+    }
+
+    /* Тёмная тема (если система поддерживает) */
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: black;
+        color: white;
+      }
+
+      header {
+        background-color: #1a1a1a;
+      }
+
+      .server-info {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .copy-btn {
+        background: #FFD700;
+        color: black;
+      }
+
+      .footer {
+        background-color: rgba(0, 0, 0, 0.9);
+        color: #ccc;
+      }
     }
 
     /* Шапка */
